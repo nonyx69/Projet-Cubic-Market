@@ -17,9 +17,7 @@ class UserManager
     {
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = $this->pdo->prepare(
-            "INSERT INTO users (pseudo, email, password, role)
-             VALUES (?, ?, ?, 'ROLE_USER')"
+        $stmt = $this->pdo->prepare("INSERT INTO users (pseudo, email, password, role) VALUES (?, ?, ?, 'ROLE_USER')"
         );
 
         $stmt->execute([$pseudo, $email, $hash]);
