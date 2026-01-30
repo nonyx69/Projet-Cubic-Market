@@ -6,89 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cubic Market</title>
     <style>
-        /* Design inspiré de l'univers Minecraft / Gaming */
         :root {
             --bg-color: #1a1a1a;
-            --card-bg: #2d2d2d;
-            --primary-color: #55ff55; /* Vert Minecraft */
+            /* On garde une légère transparence pour voir l'image derrière la carte */
+            --card-bg: rgba(45, 45, 45, 0.85); 
+            --primary-color: #55ff55;
             --text-color: #f1f1f1;
-            --accent-color: #3fb33f;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            margin: 0;
+            
+            /* --- CONFIGURATION DU BACKGROUND --- */
+            /* Remplace l'URL par le chemin de ton image */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                              url('../src/images/jungle-lake.webp');
+            background-size: cover;       /* L'image prend tout l'espace */
+            background-position: center;  /* Centrage de l'image */
+            background-attachment: fixed; /* L'image ne bouge pas au scroll */
+            background-repeat: no-repeat;
         }
 
         .container {
             background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8);
             text-align: center;
             border-bottom: 5px solid var(--primary-color);
-            min-width: 320px;
+            min-width: 350px;
+            /* Effet flou derrière la carte (très moderne) */
+            backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
             color: var(--primary-color);
-            text-shadow: 2px 2px #000;
+            text-shadow: 3px 3px #000;
         }
 
-        .user-info {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+        .user-info { margin-bottom: 2rem; }
 
         .role-badge {
             display: inline-block;
-            background-color: #444;
-            padding: 4px 12px;
+            background-color: #222;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
             margin-top: 10px;
-            color: #aaa;
+            color: #ccc;
+            border: 1px solid #444;
         }
 
-        .admin-badge { color: #ff5555; border: 1px solid #ff5555; }
+        .admin-badge { color: #ff5555; border-color: #ff5555; }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: 2px solid var(--primary-color);
             border-radius: 4px;
             transition: all 0.3s ease;
             font-weight: bold;
             margin: 0 10px;
+            display: inline-block;
         }
 
         .nav-links a:hover {
             background-color: var(--primary-color);
             color: #000;
+            transform: scale(1.05); /* Petit effet de zoom au survol */
         }
 
-        .logout-link {
-            color: #ff5555 !important;
-            border-color: #ff5555 !important;
-        }
-
-        .logout-link:hover {
-            background-color: #ff5555 !important;
-            color: white !important;
-        }
+        .logout-link { color: #ff5555 !important; border-color: #ff5555 !important; }
+        .logout-link:hover { background-color: #ff5555 !important; color: white !important; }
     </style>
 </head>
 <body>
