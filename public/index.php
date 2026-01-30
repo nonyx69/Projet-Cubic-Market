@@ -52,6 +52,25 @@
 
         .user-info { margin-bottom: 2rem; }
 
+        /* --- NOUVEAUX STYLES POUR LE NOM --- */
+        .welcome-text {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .user-name {
+            font-size: 2.2rem;
+            color: #fff;
+            display: block;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(85, 255, 85, 0.5); /* Halo vert subtil */
+            margin-bottom: 10px;
+        }
+
         .role-badge {
             display: inline-block;
             background-color: #222;
@@ -59,7 +78,7 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 5px;
             color: #ccc;
             border: 1px solid #444;
         }
@@ -95,8 +114,9 @@
 
     <?php if (isset($_SESSION['user'])): ?>
         <div class="user-info">
-            Bienvenue, <strong><?= htmlspecialchars($_SESSION['user']['pseudo']) ?></strong> 👋
-            <br>
+            <span class="welcome-text">Bienvenue,</span>
+            <strong class="user-name"><?= htmlspecialchars($_SESSION['user']['pseudo']) ?></strong>
+            
             <span class="role-badge <?= $_SESSION['user']['role'] === 'ROLE_ADMIN' ? 'admin-badge' : '' ?>">
                 <?= htmlspecialchars($_SESSION['user']['role']) ?>
             </span>
