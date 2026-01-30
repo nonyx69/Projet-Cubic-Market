@@ -2,28 +2,27 @@
 
 namespace Managers;
 
-use PDO;
+
 
 class UserManager
 {
-    private PDO $pdo;
+    private $pdo;
 
-    public function __construct(PDO $pdo)
+    public function __construct($pdo)
     {
         $this->pdo = $pdo;
     }
 
-    public function register(string $pseudo, string $email, string $password)
+    public function register($pseudo, $email, $password)
     {
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = $this->pdo->prepare("INSERT INTO users (pseudo, email, password, role) VALUES (?, ?, ?, 'ROLE_USER')"
-        );
+        $stmt = $this->pdo->prepare("INSERT INTO users (pseudo, email, password, role) VALUES (?, ?, ?, 'ROLE_USER')");
 
         $stmt->execute([$pseudo, $email, $hash]);
     }
 
-    public function login(string $email, string $password)
+    public function login($email, $password)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);

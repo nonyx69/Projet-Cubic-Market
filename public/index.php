@@ -5,7 +5,7 @@ session_start();
 <h1>Cubic Market</h1>
 
 <?php if (isset($_SESSION['user'])): ?>
-    Bienvenue <?= htmlspecialchars($_SESSION['user']['pseudo']) ?> 👋
+    Bienvenue <?= htmlspecialchars($_SESSION['user']['pseudo']) ?>
     <br>
     Rôle : <?= htmlspecialchars($_SESSION['user']['role']) ?>
     <br>
