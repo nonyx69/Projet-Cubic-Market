@@ -23,7 +23,7 @@ class UserManager
         $stmt->execute([$pseudo, $email, $hash]);
     }
 
-    public function login(string $email, string $password): ?array
+    public function login(string $email, string $password)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
