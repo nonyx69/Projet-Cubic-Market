@@ -8,7 +8,6 @@
     <style>
         :root {
             --bg-color: #1a1a1a;
-            /* On garde une légère transparence pour voir l'image derrière la carte */
             --card-bg: rgba(45, 45, 45, 0.85); 
             --primary-color: #55ff55;
             --text-color: #f1f1f1;
@@ -23,28 +22,14 @@
             justify-content: center;
             min-height: 100vh;
             
-            /* --- CONFIGURATION DU BACKGROUND --- */
-            /* Remplace l'URL par le chemin de ton image */
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                               url('../src/images/jungle-lake.webp');
-            background-size: cover;       /* L'image prend tout l'espace */
-            background-position: center;  /* Centrage de l'image */
-            background-attachment: fixed; /* L'image ne bouge pas au scroll */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             background-repeat: no-repeat;
         }
 
-<<<<<<< HEAD
-<?php if (isset($_SESSION['user'])): ?>
-    Bienvenue <?= htmlspecialchars($_SESSION['user']['pseudo']) ?>
-    <br>
-    Rôle : <?= htmlspecialchars($_SESSION['user']['role']) ?>
-    <br>
-    <a href="logout.php">Déconnexion</a>
-<?php else: ?>
-    <a href="login.php">Connexion</a> |
-    <a href="register.php">Inscription</a>
-<?php endif; ?>
-=======
         .container {
             background-color: var(--card-bg);
             padding: 2.5rem;
@@ -53,7 +38,6 @@
             text-align: center;
             border-bottom: 5px solid var(--primary-color);
             min-width: 350px;
-            /* Effet flou derrière la carte (très moderne) */
             backdrop-filter: blur(8px); 
             -webkit-backdrop-filter: blur(8px);
         }
@@ -97,7 +81,7 @@
         .nav-links a:hover {
             background-color: var(--primary-color);
             color: #000;
-            transform: scale(1.05); /* Petit effet de zoom au survol */
+            transform: scale(1.05);
         }
 
         .logout-link { color: #ff5555 !important; border-color: #ff5555 !important; }
@@ -133,4 +117,3 @@
 
 </body>
 </html>
->>>>>>> 1814c9bfb04666e282d50d003e298f3ec4d4a79b
